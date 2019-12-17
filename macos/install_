@@ -95,13 +95,13 @@ else
   #defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
   # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-  sudo systemsetup -settimezone "America/New_York" > /dev/null
+  #sudo systemsetup -settimezone "America/New_York" > /dev/null
 
   # Disable auto-correct
   defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
   # Stop iTunes from responding to the keyboard media keys
-  #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
+  launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
   ###############################################################################
   # Screen                                                                      #
@@ -221,7 +221,7 @@ else
   defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
   # Enable the MacBook Air SuperDrive on any Mac
-  sudo nvram boot-args="mbasd=1"
+  #sudo nvram boot-args="mbasd=1"
 
   # Show the ~/Library folder
   chflags nohidden ~/Library
@@ -535,7 +535,7 @@ else
   defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
   # Disable continuous spell checking
-  #defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
+  defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
   ###############################################################################
   # Google Chrome & Google Chrome Canary                                        #
@@ -570,18 +570,18 @@ else
   #defaults write org.m0k.transmission MagnetOpenAsk -bool false
 
   # Trash original torrent files
-  defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
+  #defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
 
   # Hide the donate message
-  defaults write org.m0k.transmission WarningDonate -bool false
+  #defaults write org.m0k.transmission WarningDonate -bool false
   # Hide the legal disclaimer
-  defaults write org.m0k.transmission WarningLegal -bool false
+  #defaults write org.m0k.transmission WarningLegal -bool false
 
   # IP block list.
   # Source: https://giuliomac.wordpress.com/2014/02/19/best-blocklist-for-transmission/
-  defaults write org.m0k.transmission BlocklistNew -bool true
-  defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
-  defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
+  #defaults write org.m0k.transmission BlocklistNew -bool true
+  #defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
+  #defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 
   ###############################################################################
   # Kill affected applications                                                  #
